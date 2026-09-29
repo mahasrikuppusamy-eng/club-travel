@@ -50,6 +50,10 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.html"));
 });
 
+app.get("/health", (req, res) => {
+    res.json({ status: "ok" });
+});
+
 
 // Campus Club
 app.post("/members", async (req, res) => {
