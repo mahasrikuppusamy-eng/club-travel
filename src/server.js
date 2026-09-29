@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -12,7 +14,7 @@ const mongoUri = process.env.MONGODB_URI;
 if (mongoUri) {
     mongoose.connect(mongoUri)
         .then(() => console.log("MongoDB Connected"))
-        .catch((err) => console.error("MongoDB Error:", err.message));
+        .catch((err) => console.error("MongoDB Error:", err));
 } else {
     console.log("MONGODB_URI is not set; database features are unavailable.");
 }
